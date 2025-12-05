@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Suma de dos números</title>
+    <title>Suma y Resta de dos números</title>
     <style>
         .container {
             text-align: center;
@@ -23,14 +23,13 @@
         .input-container input[type="text"] {
             width: 150px;
         }
-		
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="content">
-        <h2>Suma de dos números</h2>
+        <h2>Suma y Resta de dos números</h2>
 
         <form>
             <div class="input-container">
@@ -41,7 +40,8 @@
                 <label for="num2">Segundo número:</label>
                 <input type="text" id="num2">
             </div>
-            <input type="button" value="Calcular suma"  onclick="calcularSuma()">
+            <input type="button" value="Calcular suma" onclick="calcularSuma()">
+            <input type="button" value="Calcular resta" onclick="calcularResta()">
         </form>
 
         <div id="resultado"></div>
@@ -50,19 +50,25 @@
 
 <script>
 function calcularSuma() {
-    // Obtener los valores de los campos de entrada
     var num1 = parseFloat(document.getElementById("num1").value);
     var num2 = parseFloat(document.getElementById("num2").value);
 
-    // Verificar si ambos valores son números
     if (!isNaN(num1) && !isNaN(num2)) {
-        // Calcular la suma
         var suma = num1 + num2;
-
-        // Mostrar el resultado en el elemento con id "resultado"
         document.getElementById("resultado").innerHTML = "El resultado de la suma es: " + suma;
     } else {
-        // Mostrar un mensaje de error si los valores no son números
+        document.getElementById("resultado").innerHTML = "Por favor, ingrese dos números válidos.";
+    }
+}
+
+function calcularResta() {
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+
+    if (!isNaN(num1) && !isNaN(num2)) {
+        var resta = num1 - num2;
+        document.getElementById("resultado").innerHTML = "El resultado de la resta es: " + resta;
+    } else {
         document.getElementById("resultado").innerHTML = "Por favor, ingrese dos números válidos.";
     }
 }
@@ -70,5 +76,3 @@ function calcularSuma() {
 
 </body>
 </html>
-
-
